@@ -5,6 +5,7 @@ const port = process.env.DB_PORT || 27017;
 const database = process.env.DB_DATABASE || 'files_manager';
 const url = `mongodb://${host}:${port}`;
 
+//class delcartion
 class DBClient {
   constructor() {
     MongoClient.connect(url, (err, client) => {
@@ -15,7 +16,7 @@ class DBClient {
       }
     });
   }
-
+  // new function
   isAlive() {
     if (this.db) return true;
     return false;
