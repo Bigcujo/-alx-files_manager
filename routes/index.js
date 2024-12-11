@@ -4,9 +4,9 @@ import AuthController from '../controllers/AuthController';
 import FilesController from '../controllers/FilesController';
 
 
-const express = require('express');
-// all endpoints of our API in the project
 
+const express = require('express');
+// all endpoints of our API
 const router = (app) => {
   const route = express.Router();
   app.use(express.json());
@@ -25,6 +25,5 @@ const router = (app) => {
   route.put('/files/:id/unpublish', (request, response) => FilesController.putUnpublish(request, response));
   route.get('/files/:id/data', (request, response) => FilesController.getFile(request, response));
 };
-
-
+//export the routes 
 export default router;
